@@ -1,33 +1,32 @@
-.App {
+/*ADJUST CSS SETTINGS*/
+
+li{
+  list-style: none;
+}
+.ingredientListCB{
+  display: inline-block;
+  width: 96%;
   text-align: center;
+  border: #282c34 2px solid;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.adjustButton{
+  margin-left: 65%;
+  margin-bottom: 5px;
 }
-
-.App-header {
+.servingsA{
+  width: 50%;
+  display: inline-block;
+  float: left;
+  padding-top: 20px;
+}
+body{
+  background-color: #efefef;
+}
+.adjustHead{
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 1%;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/*END OF ADJUST CSS SETTINGS*/

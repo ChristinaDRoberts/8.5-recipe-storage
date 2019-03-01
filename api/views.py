@@ -1,7 +1,8 @@
 
 from rest_framework import viewsets
 from .serializers import RecipeSerializer
-from django.utils.timezone import now
+# from django.utils.timezone import now
+from recipe.models import Recipe, Ingredient
 
 
 
@@ -12,8 +13,8 @@ from django.utils.timezone import now
 class ApiViewSet(viewsets.ModelViewSet):
 
     serializer_class = RecipeSerializer
-    # queryset = Rides.objects.all()
+    queryset = Recipe.objects.all()
     # .order_by('-id')[:10]
 
-    def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
+    # def perform_create(self, serializer):
+    #     serializer.save(user=self.request.user)
