@@ -12,7 +12,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentScreen: "RecipeList",
+            currentScreen: "RecipeForm",
             // recipes : []
         }
     }
@@ -20,13 +20,17 @@ class App extends Component {
         return (
             <div>
 
-
-                       <div >
                            <Row className="nav">
-                               <h2>NAVBAR</h2>
+                               <ul className="linksNav">
+                                   <li><a href="RecipeForm.jsx">Create A Recipe</a></li>
+                                   <li><a href="RecipeList.jsx">View Recipes</a></li>
+
+                                   <li><a onClick={() => { document.location.href ="RecipeForm.jsx"; }}>Create A Recipe</a></li>
+                               </ul>
+
                            </Row>
 
-
+                            <Row>
                                <Col className="aside" sm={2}>
                                    <h3><a href="#"> My Recipes </a></h3>
                                    <hr/>
@@ -39,22 +43,24 @@ class App extends Component {
                                    <h3><a href="#"> Vegetarian Recipes </a></h3>
                                    <hr/>
                                </Col>
-                       </div>
 
-                   <Container>
-                        {(() => {
-                       switch(this.state.currentScreen) {
-                         case 'RecipeList':
-                           return <RecipeListContainer />;
-                           case 'RecipeForm':
-                               return <RecipeFormContainer/>;
-                           case 'AdjustRecipe':
-                               return <AdjustRecipeContainer/>;
-                       }
-                   })()}
+                                <Col lg={8}>
+                                   <Container className="MainCont">
+                                        {(() => {
+                                       switch(this.state.currentScreen) {
+                                         case 'RecipeList':
+                                           return <RecipeListContainer />;
+                                           case 'RecipeForm':
+                                               return <RecipeFormContainer/>;
+                                           case 'AdjustRecipe':
+                                               return <AdjustRecipeContainer/>;
+                                       }
+                                   })()}
 
 
-                 </Container>
+                                 </Container>
+                                </Col>
+                    </Row>
             </div>
 
         );

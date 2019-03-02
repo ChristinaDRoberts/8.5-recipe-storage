@@ -16,7 +16,7 @@ class AdjustRecipeContainer extends Component{
                        <div>
                            <header className="adjustHead">
                            <div className="servingsA">
-                               Makes <input type="text"/> Servings
+                               Makes <input id="servingResult" type="text"/> Servings
                            </div>
                            <div>
                                <button className="adjustButton">Adjust</button>

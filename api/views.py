@@ -2,7 +2,7 @@
 from rest_framework import viewsets
 from .serializers import RecipeSerializer
 # from django.utils.timezone import now
-from recipe.models import Recipe, Ingredient
+from frontend.models import Recipe, Ingredient
 
 
 

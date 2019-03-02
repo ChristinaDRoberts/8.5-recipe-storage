@@ -18,7 +18,7 @@ class RecipeListContainer extends Component{
               <Col  className="FoodList"    sm={10}>
                             <Row>
                                 <div className="rec1">
-                                    <img src="https://www.publicdomainpictures.net/pictures/130000/nahled/gray-box-background.jpg" alt=""/>
+                                    <img src="https://www.publicdomainpictures.net/pictures/130000/nahled/gray-box-background.jpg" alt="" id="greybox"/>
                                     <img src="https://drop.ndtv.com/albums/COOKS/pasta-vegetarian/pastaveg_640x480.jpg" alt=""/>
                                     <img src="https://images.pexels.com/photos/46239/salmon-dish-food-meal-46239.jpeg?cs=srgb&dl=close-up-cooking-dinner-46239.jpg&fm=jpg" alt=""/>
                                     <img src="https://dimirealestate.com.au/wp-content/uploads/2018/05/dieta-low-carb-1.jpeg" alt=""/>

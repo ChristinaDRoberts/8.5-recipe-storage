@@ -5,7 +5,7 @@
 
 from rest_framework.serializers import ModelSerializer
 # from rest_framework import serializers
-from recipe.models import Recipe, Ingredient
+from frontend.models import Recipe, Ingredient
 
 
 # This class is responsible for properly formatting our model as json

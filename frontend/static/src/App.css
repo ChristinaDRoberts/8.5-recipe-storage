@@ -44,8 +44,8 @@ body{
   margin: 0;
 }
 img{
-  height: 150px;
-  width: 160px;
+  height: 100px;
+  width: 100px;
   display: inline-block;
   margin:8px;
 }
@@ -75,4 +75,54 @@ a{
 
 .Main{
   margin: 0;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+
+.linksNav{
+  display: inline-block;
+  list-style: none;
+}
+
+li{
+  display: inline-block;
+  float: right;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 15px;
+}
+
+#foodType{
+  width: 20%;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.midButt{
+  width: 20%;
+  display: inline-block;
+  margin-left: 10px;
+  border: 1px solid dimgrey;
+}
+
+
+
+#foodTemp{
+  width: 20%;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#amount{
+  width: 15%;
+  display: inline-block;
+}
+
+#loaf{
+   width: 30%;
+  display: inline-block;
+
 }
