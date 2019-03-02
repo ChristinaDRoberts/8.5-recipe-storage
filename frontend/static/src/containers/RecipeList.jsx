@@ -7,6 +7,9 @@ import '../App.css'
 
 
 class RecipeListContainer extends Component{
+    // constructor(props){
+    //     super(props);
+    // }
 
 
     render() {
@@ -99,15 +102,15 @@ class RecipeListContainer extends Component{
 }
 
 
-class RecipeTable extends Component{
+// class RecipeTable extends Component{
+//
+//     render(){
+//         return(
+//             <div>
+//                 <h4>recipe table item</h4>
+//             </div>
+//         )
+//     }
+// }
 
-    render(){
-        return(
-            <div>
-                <h4>recipe table item</h4>
-            </div>
-        )
-    }
-}
-
-export default RecipeListContainer
+export default RecipeListContainer;
