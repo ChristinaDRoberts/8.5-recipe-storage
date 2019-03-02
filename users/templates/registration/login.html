@@ -1,16 +1,13 @@
-{#% extends 'houses/base.html' %}#}
-{#{%  load static %}#}
-{##}
-{#{% block title %}Login To House Hunters!{% endblock %}#}
-{##}
-{#{% block content %}#}
-{#  <h2>Login</h2>#}
-{#  <form method="post">#}
-{#    {% csrf_token %}#}
-{#  THIS LINE BREAKS WHEN WE TRY TO LOG IN#}
-{##}
-{#      <input type="hidden" value="{% url 'houses:create'  %}" name='next'>#}
-{#    {{ form.as_p }}#}
-{#    <button type="submit">Login</button>#}
-{#  </form>#}
-{#{% endblock %}#}
+
+{% extends 'registration/base.html' %}
+
+{% block content %}
+
+<h2>Login</h2>
+  <form method="post">
+    {% csrf_token %}
+       {{ form.as_p }}
+{#            <input type="hidden" value="{% url 'frontend:index'  %}" name='next'>#}
+    <button type="submit">Login</button>
+  </form>
+{% endblock %}
