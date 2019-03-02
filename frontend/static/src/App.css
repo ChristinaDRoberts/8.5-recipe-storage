@@ -126,3 +126,22 @@ li{
   display: inline-block;
 
 }
+
+#numberAmount{
+  width: 20%;
+  display: inline-block;
+
+
+}
+
+#units{
+  width: 20%;
+  display: inline-block;
+
+}
+
+#ingredient{
+  width: 20%;
+  display: inline-block;
+
+}

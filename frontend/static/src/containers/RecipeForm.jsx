@@ -44,36 +44,36 @@ class RecipeFormContainer extends Component{
             <Form.Control type="text" placeholder="Cook Time" className="midButt" />
 
 
-                 <Form.Group controlId="exampleForm.ControlSelect1" id="foodTemp">
-                     <Form.Control as="select" >
+
+                <Form.Group controlId="exampleForm.ControlSelect1" id="foodTemp">
+                     <Form.Control as="select">
                       <option>Fahrenheit</option>
                       <option>Celsius</option>
-                    </Form.Control>
-              </Form.Group>
+                     </Form.Control>
+                </Form.Group>
 
 
-            This Recipe Will Make: <Form.Control type="text" placeholder="amount" id="amount" />
-            <Form.Control type="text" placeholder="cookies, loaves, etc."  id="loaf"/>
+            <Form.Group>
+                This Recipe Will Make: <Form.Control type="text" placeholder="amount" id="amount" />
+                <Form.Control type="text" placeholder="cookies, loaves, etc."  id="loaf"/>
+            </Form.Group>
+
+            <Form.Control type="text" placeholder="#" id="numberAmount"/>
+            <Form.Control as="text" placeholder="units" id="units"/>
+            <Form.Control type="text" placeholder="Ingredient" id="ingredient" />
+            <Button variant="light"> + </Button>
 
 
 
-
-
-
-
-
-
-
-              <Form.Group controlId="exampleForm.ControlTextarea1">
+            <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Directions</Form.Label>
                 <Form.Control as="textarea" rows="3" />
-              </Form.Group>
-        </Form>
+            </Form.Group>
+
+        </Form>)};
 
 
-        )
 
-    }
 }
 
 export default RecipeFormContainer;
