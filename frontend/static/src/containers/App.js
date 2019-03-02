@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import {Container} from 'react-bootstrap';
+import {Container, Row, Col, Column} from 'react-bootstrap';
+// import {Column} from 'react-bootstrap';
+// import {Row} from 'react-bootstrap';
+// import Col from 'react-bootstrap/Col'
+// import {Container} from 'react-bootstrap';
 
 import '../App.css';
 import AdjustRecipe from "./AdjustRecipe";
@@ -20,13 +24,15 @@ class App extends Component {
     return (
 
         <Container>
+               {/*<Row className="nav">*/}
+                   {/*<h2>navbar</h2>*/}
+               {/*</Row>*/}
 
+               {/*<Row>*/}
+                   {/*<Col className="aside" sm={2}> </Col>*/}
+               {/*</Row>*/}
+            {/*<Row >*/}
 
-            <div>
-
-            </div>
-
-            <main>
                     {(() => {
                         switch(this.state.currentScreen) {
                           case 'RecipeList':
@@ -39,7 +45,7 @@ class App extends Component {
 
                         }
                     })()}
-            </main>
+            {/*</Row>*/}
 
         </Container>
 
