@@ -41,6 +41,7 @@ body{
 .aside{
   background-color: #e6e6e6;
   height: 100vh;
+  margin: 0;
 }
 img{
   height: 150px;
@@ -49,25 +50,6 @@ img{
   margin:8px;
 }
 
-/*.rec1{*/
-  /*background-color: white;*/
-/*}*/
-
-/*.rec2{*/
-  /*background-color: #5a6268;*/
-/*}*/
-
-/*.rec3{*/
-  /*background-color: #34ce57;*/
-/*}*/
-
-/*.rec4{*/
-  /*background-color: #6610f2;*/
-/*}*/
-
-/*.rec5{*/
-  /*background-color: #9fcdff;*/
-/*}*/
 
 .addrec{
   height:100px;
@@ -84,4 +66,13 @@ a{
   color: #5a6268;
   font-size: 20px;
   /*margin: 50px 5px;*/
+}
+
+.FoodList{
+  float: right;
+  display: inline-block;
+}
+
+.Main{
+  margin: 0;
 }

@@ -14,27 +14,8 @@ class RecipeListContainer extends Component{
 
     render() {
        return (
-           <Container>
-               <Row className="nav">
-                   <h2>navbar</h2>
-               </Row>
 
-               <Row>
-                   <Col className="aside" sm={2}>
-                       <h3><a href="#"> My Recipes </a></h3>
-                       <hr/>
-                       <h3><a href="#"> Public Recipes </a></h3>
-                       <hr/>
-                       <h3><a href="#"> Popular Recipes </a></h3>
-                       <hr/>
-                       <h3><a href="#"> My Favorite Recipes</a></h3>
-                       <hr/>
-                       <h3><a href="#"> Vegetarian Recipes </a></h3>
-                       <hr/>
-                   </Col>
-                    <div className="col10">
-                        <Col className="Main" sm={12}>
-                            <hr/>
+              <Col  className="FoodList"    sm={10}>
                             <Row>
                                 <div className="rec1">
                                     <img src="https://www.publicdomainpictures.net/pictures/130000/nahled/gray-box-background.jpg" alt=""/>
@@ -92,11 +73,10 @@ class RecipeListContainer extends Component{
                             </Row>
 
                         </Col>
-                    </div>
-                   </Row>
 
 
-            </Container>
+
+
         )
     }
 }

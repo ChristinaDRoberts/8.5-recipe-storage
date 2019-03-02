@@ -6,30 +6,56 @@ import AdjustRecipeContainer from "./AdjustRecipe";
 
 import RecipeFormContainer from "./RecipeForm";
 import RecipeListContainer from "./RecipeList"
-// import divWithClassName from "react-bootstrap/es/utils/divWithClassName";
 
- console.log(AdjustRecipeContainer);
 
 class App extends Component {
-
-
     constructor(props) {
         super(props);
         this.state = {
-            // currentScreen: "AdjustRecipe",
-            recipes : []
+            currentScreen: "RecipeList",
+            // recipes : []
         }
     }
       render() {
         return (
-            <Container>
-                <div className="root">
+            <div>
 
-                    <AdjustRecipeContainer/>
-                    {/*<RecipeFormContainer/>*/}
-                    {/*<RecipeListContainer/>*/}
-                </div>
-            </Container>
+
+                       <div >
+                           <Row className="nav">
+                               <h2>NAVBAR</h2>
+                           </Row>
+
+
+                               <Col className="aside" sm={2}>
+                                   <h3><a href="#"> My Recipes </a></h3>
+                                   <hr/>
+                                   <h3><a href="#"> Public Recipes </a></h3>
+                                   <hr/>
+                                   <h3><a href="#"> Popular Recipes </a></h3>
+                                   <hr/>
+                                   <h3><a href="#"> My Favorite Recipes</a></h3>
+                                   <hr/>
+                                   <h3><a href="#"> Vegetarian Recipes </a></h3>
+                                   <hr/>
+                               </Col>
+                       </div>
+
+                   <Container>
+                        {(() => {
+                       switch(this.state.currentScreen) {
+                         case 'RecipeList':
+                           return <RecipeListContainer />;
+                           case 'RecipeForm':
+                               return <RecipeFormContainer/>;
+                           case 'AdjustRecipe':
+                               return <AdjustRecipeContainer/>;
+                       }
+                   })()}
+
+
+                 </Container>
+            </div>
 
         );
       }
@@ -39,15 +65,3 @@ class App extends Component {
 export default App;
 
 
-      {/*{(() => {*/}
-                        {/*switch(this.state.currentScreen) {*/}
-                          {/*case 'RecipeList':*/}
-                            {/*return <RecipeList />;*/}
-                            {/*case "RecipeForm":*/}
-                                {/*return <RecipeForm/>;*/}
-                            {/*case "AdjustRecipe":*/}
-                                {/*return <AdjustRecipe/>;*/}
-
-
-                        {/*}*/}
-                    {/*})()}*/}
