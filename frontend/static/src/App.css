@@ -30,3 +30,48 @@ body{
 
 
 /*END OF ADJUST CSS SETTINGS*/
+
+.nav{
+  background-color: #d0d0d0d0;
+}
+.Main{
+  background-color: #fffff;
+}
+
+.aside{
+  background-color: #e6e6e6;
+  height: 100vh;
+}
+img{
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  margin:8px;
+}
+
+/*.rec1{*/
+  /*background-color: white;*/
+/*}*/
+
+/*.rec2{*/
+  /*background-color: #5a6268;*/
+/*}*/
+
+/*.rec3{*/
+  /*background-color: #34ce57;*/
+/*}*/
+
+/*.rec4{*/
+  /*background-color: #6610f2;*/
+/*}*/
+
+/*.rec5{*/
+  /*background-color: #9fcdff;*/
+/*}*/
+
+.addrec{
+  height:100px;
+  width: 100px;
+  background-color: #5a6268;
+  display: inline-block;
+}
