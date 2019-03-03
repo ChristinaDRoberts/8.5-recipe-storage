@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 class RecipeFormContainer extends Component{
        constructor(props) {
            super(props);
-           this.handleSubmit = this.handleSubmit.bind(this);
+           // this.handleSubmit = this.handleSubmit.bind(this);
 
            this.state = {
                title: "",
@@ -15,28 +15,71 @@ class RecipeFormContainer extends Component{
            };
        }
 
-        handleSubmit(event){
-            event.preventDefault();
+
+
+
+        //
+        // handleSubmit(event) {
+        //     event.preventDefault();
+        //
+        //
+        //
+        // }
+
+            componentWillMount(){
+
+
 
             const conf = {
               method: "post",
               body: JSON.stringify(),
               headers: new Headers({"Content-Type": "application/json"})
-            };
 
 
-            fetch(`${process.env.REACT_APP_API_HOST}/api/recipe/`).then((response) => {
-                if (response.status !== 200) {
-                    return this.setState({placeholder: "Something went wrong"});
-      }
-                return response.json();
-                console.log("success");
+        };
+
+
+                fetch(`${process.env.REACT_APP_API_HOST}/api/recipe/`).then((response) => {
+                    if (response.status !== 200) {
+                        return this.setState({placeholder: "Something went wrong"});
+                    }
+                    return response.json();
+                    console.log("success");
                 }).then((data) => {
                     this.setState({recipeCollection: data, loaded: true});
+                    console.log("state", this.state);
+                    // console.log(recipeCollection)
 
-            });
-           }
+                });
+            }
 
+                // componentDidMount() {
+                //
+                //
+                //     const conf = {
+                //               method: "post",
+                //               body: JSON.stringify(),
+                //               headers: new Headers({"Content-Type": "application/json"})
+                //             };
+                //
+                //         fetch(`${process.env.REACT_APP_API_HOST}/api/recipe/`, conf).then((response) => {
+                //             if (response.status !== 201) {
+                //             return this.setState({placeholder: "Something went wrong"});
+                //       }
+                //
+                //             return response.json();
+                //         }).then((recipe) => {
+                //         const {recipeCollection} = this.state;
+                //         let newRecipeCollection = this.state.recipeCollection;
+                //         newRecipeCollection.push(recipe);
+                //         this.setState({recipeCollection: newRecipeCollection});
+                //         console.log(recipeCollection)
+                //          });
+                //             // let newRecipeCollection = this.state.recipeCollection;
+                //             // newRecipeCollection .push(recipe);
+                //             // this.setState({recipeCollection: newRecipeCollection});
+                //         };
+                //
 
 
 

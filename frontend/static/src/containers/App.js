@@ -20,11 +20,21 @@ class App extends Component {
         };
     }
 
-        addRecipeToPage = (recipe) => {
+        // addRecipeToPage = (recipe) => {
 
-        const conf = {
+    addRecipeToPage(){
+
+    }
+
+
+
+
+    componentDidMount() {
+
+
+    const conf = {
               method: "post",
-              body: JSON.stringify(recipe),
+              body: JSON.stringify(),
               headers: new Headers({"Content-Type": "application/json"})
             };
 
@@ -39,11 +49,17 @@ class App extends Component {
         let newRecipeCollection = this.state.recipeCollection;
         newRecipeCollection.push(recipe);
         this.setState({recipeCollection: newRecipeCollection});
+        // console.log(recipeCollection)
          });
             // let newRecipeCollection = this.state.recipeCollection;
             // newRecipeCollection .push(recipe);
             // this.setState({recipeCollection: newRecipeCollection});
         };
+
+
+
+
+
 
 
 
