@@ -17,9 +17,16 @@ class RecipeFormContainer extends Component{
 
         handleSubmit(event){
             event.preventDefault();
-            fetch('/', {
-                method: 'POST',
-                body: this.state
+            fetch(`${process.env.REACT_APP_API_HOST}/api/recipe/`).then((response) => {
+                if (response.status !== 200) {
+
+                    return this.setState({placeholder: "Something went wrong"});
+      }
+                return response.json();
+                console.log("success");
+                }).then((data) => {
+                    this.setState({recipeCollection: data, loaded: true});
+
             });
            }
 
