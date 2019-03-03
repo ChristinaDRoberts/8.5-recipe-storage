@@ -11,12 +11,26 @@ import RecipeListContainer from "./RecipeList"
 class App extends Component {
     constructor(props) {
         super(props);
+        this.addRecipeToPage= this.addRecipeToPage.bind(this)
+
         this.state = {
             currentScreen: "RecipeForm",
-            // recipes : []
-        }
+            recipeCollection: [ ]
+
+        };
     }
-      render() {
+
+        addRecipeToPage = (recipe) => {
+            let newRecipeCollection = this.state.recipeCollection;
+            newRecipeCollection .push(recipe);
+            this.setState({recipeCollection: newRecipeCollection});
+        };
+
+
+
+
+
+    render() {
         return (
             <div>
 
@@ -51,7 +65,7 @@ class App extends Component {
                                          case 'RecipeList':
                                            return <RecipeListContainer />;
                                            case 'RecipeForm':
-                                               return <RecipeFormContainer/>;
+                                               return <RecipeFormContainer recipes={this.newRecipeCollection} addRecipeToPage={this.addRecipeToPage}/>;
                                            case 'AdjustRecipe':
                                                return <AdjustRecipeContainer/>;
                                        }

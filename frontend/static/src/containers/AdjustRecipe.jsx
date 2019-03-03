@@ -5,6 +5,9 @@ import {Col} from "react-bootstrap";
 
 class AdjustRecipeContainer extends Component{
 
+
+
+
     render(){
 
        return(
@@ -24,16 +27,17 @@ class AdjustRecipeContainer extends Component{
                            </header>
                            <div className="ingredientListCB">
                                <ul>
+                                   {/*use map here to print out list of ingredients*/}
                                    <li>testing</li>
-                                   <li><input type="checkbox"></input>Chocolate Powder</li>
-                                   <li><input type="checkbox"></input>Milk</li>
-                                   <li><input type="checkbox"></input>Eggs</li>
-                                   <li><input type="checkbox"></input>Baking Powder</li>
-                                   <li><input type="checkbox"></input>Sugar</li>
-                                   <li><input type="checkbox"></input>Frostin</li>
-                                   <li><input type="checkbox"></input>Cream Cheese</li>
-                                   <li><input type="checkbox"></input>Powdered Sugar</li>
-                                   <li><input type="checkbox"></input>Love</li>
+                                   <li><input type="checkbox"></input></li>
+                                   <li><input type="checkbox"></input></li>
+                                   <li><input type="checkbox"></input></li>
+                                   <li><input type="checkbox"></input></li>
+                                   <li><input type="checkbox"></input></li>
+                                   <li><input type="checkbox"></input></li>
+                                   <li><input type="checkbox"></input></li>
+                                   <li><input type="checkbox"></input></li>
+                                   <li><input type="checkbox"></input></li>
                                </ul>
                            </div>
                        </div>

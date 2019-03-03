@@ -3,18 +3,32 @@ import {Form} from 'react-bootstrap'
 import Button from 'react-bootstrap/Button';
 
 class RecipeFormContainer extends Component{
-       constructor() {
-        super();
-        this.state = {
-            title: "",
-            image: "",
-            servings: "",
-            directions: ""
-        }
-    }
+       constructor(props) {
+           super(props);
+           this.handleSubmit = this.handleSubmit.bind(this);
+
+           this.state = {
+               title: "",
+               image: "",
+               servings: "",
+               directions: ""
+           };
+       }
+
+        handleSubmit(event){
+            event.preventDefault();
+            fetch('/', {
+                method: 'POST',
+                body: this.state
+            });
+           }
+
 
 
     render(){
+           var recipes = this.props.recipeCollection;
+
+
         return(
 
         <Form>
@@ -59,7 +73,7 @@ class RecipeFormContainer extends Component{
             </Form.Group>
 
             <Form.Control type="text" placeholder="#" id="numberAmount"/>
-            <Form.Control as="text" placeholder="units" id="units"/>
+            <Form.Control type="text" placeholder="units" id="units"/>
             <Form.Control type="text" placeholder="Ingredient" id="ingredient" />
             <Button variant="light"> + </Button>
 
@@ -69,6 +83,9 @@ class RecipeFormContainer extends Component{
                 <Form.Label>Directions</Form.Label>
                 <Form.Control as="textarea" rows="3" />
             </Form.Group>
+
+
+            <Button  onClick={(event) => {this.props.addRecipeToPage(recipes)}}  variant="secondary">Save This Recipe !</Button>
 
         </Form>)};
 
