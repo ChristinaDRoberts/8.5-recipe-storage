@@ -17,9 +17,16 @@ class RecipeFormContainer extends Component{
 
         handleSubmit(event){
             event.preventDefault();
+
+            const conf = {
+              method: "post",
+              body: JSON.stringify(),
+              headers: new Headers({"Content-Type": "application/json"})
+            };
+
+
             fetch(`${process.env.REACT_APP_API_HOST}/api/recipe/`).then((response) => {
                 if (response.status !== 200) {
-
                     return this.setState({placeholder: "Something went wrong"});
       }
                 return response.json();
@@ -29,6 +36,9 @@ class RecipeFormContainer extends Component{
 
             });
            }
+
+
+
 
 
 

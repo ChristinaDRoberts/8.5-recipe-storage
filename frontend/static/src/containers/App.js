@@ -11,7 +11,7 @@ import RecipeListContainer from "./RecipeList"
 class App extends Component {
     constructor(props) {
         super(props);
-        this.addRecipeToPage= this.addRecipeToPage.bind(this)
+        this.addRecipeToPage= this.addRecipeToPage.bind(this);
 
         this.state = {
             currentScreen: "RecipeForm",
@@ -21,10 +21,30 @@ class App extends Component {
     }
 
         addRecipeToPage = (recipe) => {
-            let newRecipeCollection = this.state.recipeCollection;
-            newRecipeCollection .push(recipe);
-            this.setState({recipeCollection: newRecipeCollection});
+
+        const conf = {
+              method: "post",
+              body: JSON.stringify(recipe),
+              headers: new Headers({"Content-Type": "application/json"})
+            };
+
+        fetch(`${process.env.REACT_APP_API_HOST}/api/recipe/`, conf).then((response) => {
+            if (response.status !== 201) {
+            return this.setState({placeholder: "Something went wrong"});
+      }
+
+            return response.json();
+        }).then((recipe) => {
+        const {recipeCollection} = this.state;
+        let newRecipeCollection = this.state.recipeCollection;
+        newRecipeCollection.push(recipe);
+        this.setState({recipeCollection: newRecipeCollection});
+         });
+            // let newRecipeCollection = this.state.recipeCollection;
+            // newRecipeCollection .push(recipe);
+            // this.setState({recipeCollection: newRecipeCollection});
         };
+
 
 
 
