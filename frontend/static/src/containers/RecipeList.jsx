@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import {Column} from 'react-bootstrap';
+
 import {Row} from 'react-bootstrap';
 import Col from 'react-bootstrap/Col'
-import {Container} from 'react-bootstrap';
+
 import '../App.css'
 
 

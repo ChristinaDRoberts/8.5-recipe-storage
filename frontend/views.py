@@ -27,3 +27,5 @@ class IndexView(View):
                 """,
                 status=501,
             )
+
+

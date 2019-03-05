@@ -15,7 +15,7 @@ class RecipeSerializer(ModelSerializer):
 
     class Meta:
         model = Recipe
-        fields = ["title", "image", "servings", "directions"]
+        fields = ["title", "image", "servings", "directions", "ingredients"]
         depth = 1
 
 
