@@ -16,7 +16,7 @@ class App extends Component {
 
         this.state = {
             currentScreen: "RecipeForm",
-
+            id: null
 
         };
     }
@@ -24,8 +24,12 @@ class App extends Component {
 
 
 //using fat arrow syntax it means we dont have to bind at top under state
-    route = (currentScreen) => {
+    route = (currentScreen, id) => {
         this.setState({currentScreen})
+
+        if(id){
+            this.setState({id})
+        }
     };
 
 
@@ -38,8 +42,16 @@ class App extends Component {
                <Row className="nav">
                    <ul className="linksNav">
                        <li><button className="menuButton"    onClick={(e) => {this.route("RecipeForm")}}>Create A Recipe</button></li>
-
                        <li><button className="menuButton"     onClick={(e) => {this.route("RecipeList")}}>View Recipes</button></li>
+
+                       <h2 className="heading">Recipe Roundup</h2>
+
+                       {/*<div className="navsymbols">*/}
+                           {/*<img/>*/}
+                           {/*<img/>*/}
+                           {/*<img/>*/}
+
+
 
 
 
@@ -62,7 +74,7 @@ class App extends Component {
                    </Col>
 
                     <Col lg={8}>
-                       <Container-fluid className="MainCont">
+                       <Container className="MainCont">
                             {(() => {
                            switch(this.state.currentScreen) {
                              case 'RecipeList':
@@ -70,13 +82,13 @@ class App extends Component {
                                case 'RecipeForm':
                                    return <RecipeFormContainer  route={this.route}/>;
                                case 'AdjustRecipe':
-                                   return <AdjustRecipeContainer route={this.route}/>;
+                                   return <AdjustRecipeContainer route={this.route} id={this.state.id}/>;
 
                            }
                        })()}
 
 
-                     </Container-fluid>
+                     </Container>
                     </Col>
                     </Row>
             </div>

@@ -30,53 +30,52 @@ class RecipeMakerComponent extends Component {
         super(props);
 
         this.state = {
-            recipe : {
+            recipe: {
                 title: "",
+                creator: "",
                 image: "",
                 servings: "",
-                directions: ""},
-            recipeCollection: [ ]
-
-
-    };
-}
-
-
-
-        handleSubmit= (e) => {
-                e.preventDefault();
-                // let
+                directions: "",
+                ingredients: []
+            },
+            recipeCollection: []
 
 
         };
+    }
 
-        handleInput = (e) => {
-            this.setState({[e.target.name]: e.target.value})
-        };
 
-        handleAddRecipe = (e) => {
-            e.preventDefault();
-            let recipe = {title: "", image: " ", servings: "", directions: ""};
-            let {recipeCollection} = this.state.recipeCollection;
-            recipeCollection.push({recipe});
+    // handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     // let
+    // };
+    //
+    // handleInput = (e) => {
+    //     this.setState({[e.target.name]: e.target.value})
+    // };
 
-            this.setState({recipeCollection: recipeCollection})
-        };
+    // handleAddRecipe = (e) => {
+    //     e.preventDefault();
+    //     let recipe = {title: "", image: " ", servings: "", directions: ""};
+    //     let {recipeCollection} = this.state.recipeCollection;
+    //     recipeCollection.push({recipe});
+    //
+    //     this.setState({recipeCollection: recipeCollection})
+    // };
+    //
 
-        //
-        // updateRecipe = (index, value) => {
-        //     let {recipeCollection} = this.state.recipeCollection;
-        //     let recipe = recipeCollection[index];
-        //     let recipe.title = value;
-        //     this.forceUpdate();
-        // };
-        //
-        // }
+    // updateRecipe = (index) => {
+    //     let {recipeCollection} = this.state.recipeCollection;
+    //     let recipe = recipeCollection[index];
+    //     this.forceUpdate();
+    // };
 
-    createNewRecipeList = () => {
+//adds the recipe to list and post to api
+    submitRecipe = () => {
+        let recipe = this.state.recipe;
         const conf = {
-            method: "post",
-            body: JSON.stringify(),
+            method: "POST",
+            body: JSON.stringify(recipe),
             headers: new Headers({"Content-Type": "application/json"})
         };
 
@@ -87,24 +86,24 @@ class RecipeMakerComponent extends Component {
 
             return response.json();
         }).then((recipe) => {
-            const {recipeCollection} = this.state;
+            const {recipeCollection} = this.state.recipeCollection;
             let newRecipeCollection = this.state.recipeCollection;
             newRecipeCollection.push(recipe);
             this.setState({recipeCollection: newRecipeCollection});
-            console.log(recipeCollection)
+            console.log(recipe)
 
         });
 
-        this.props.route('RecipeList')
+        // this.props.route('RecipeList')
 
     };
+
 
 
         render() {
                 // var recipes = this.state.recipeCollection;
 
-
-                return (
+            return (
 
 
                     <Form>
@@ -160,7 +159,7 @@ class RecipeMakerComponent extends Component {
                         </Form.Group>
 
             {/*change this event, should i use handle event, create a new event? make the array of recipes state here */}
-                        <Button onClick={(this.handleAddRecipe)} variant="secondary">Save This Recipe !</Button>
+                        <Button onClick={(this.submitRecipe)} variant="secondary">Save This Recipe !</Button>
 
                     </Form>)
             };

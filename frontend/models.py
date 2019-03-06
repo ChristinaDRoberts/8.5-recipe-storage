@@ -12,6 +12,7 @@ class Recipe(models.Model):
     image = models.ImageField( blank=True)
     servings = models.IntegerField(default=4)
     directions = models.TextField()
+    creator = models.CharField(max_length=255, null=True)
 
 
 class Ingredient(models.Model):
