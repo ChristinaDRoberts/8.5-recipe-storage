@@ -30,11 +30,12 @@ class RecipeMakerComponent extends Component {
         super(props);
 
         this.state = {
+            recipe : {
                 title: "",
                 image: "",
                 servings: "",
-                directions: "",
-                recipeCollection: [ ]
+                directions: ""},
+            recipeCollection: [ ]
 
 
     };
@@ -44,6 +45,7 @@ class RecipeMakerComponent extends Component {
 
         handleSubmit= (e) => {
                 e.preventDefault();
+                // let
 
 
         };
@@ -92,10 +94,7 @@ class RecipeMakerComponent extends Component {
             console.log(recipeCollection)
 
         });
-        // let newRecipeCollection = this.state.recipeCollection;
-        // newRecipeCollection .push(recipe);
-        // this.setState({recipeCollection: newRecipeCollection});
-        // };
+
         this.props.route('RecipeList')
 
     };
@@ -107,7 +106,9 @@ class RecipeMakerComponent extends Component {
 
                 return (
 
-                    <Form onSubmit={this.props.submit}>
+
+                    <Form>
+                    {/*<Form onSubmit={this.props.submit}>*/}
 
                         <Form.Group controlId="exampleForm.ControlInput1">
                             <Form.Label>Recipe Name</Form.Label>
@@ -158,7 +159,7 @@ class RecipeMakerComponent extends Component {
                             <Form.Control as="textarea" rows="3"/>
                         </Form.Group>
 
-            {/*change this event, shoudl i use handle event, create a new event? make the array of recipes state here */}
+            {/*change this event, should i use handle event, create a new event? make the array of recipes state here */}
                         <Button onClick={(this.handleAddRecipe)} variant="secondary">Save This Recipe !</Button>
 
                     </Form>)

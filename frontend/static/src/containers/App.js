@@ -37,9 +37,10 @@ class App extends Component {
 
                <Row className="nav">
                    <ul className="linksNav">
-                       <li><button onClick={(e) => {this.route("RecipeForm")}}>Create A Recipe</button></li>
+                       <li><button className="menuButton"    onClick={(e) => {this.route("RecipeForm")}}>Create A Recipe</button></li>
 
-                       <li><button onClick={(e) => {this.route("RecipeList")}}>View Recipes</button></li>
+                       <li><button className="menuButton"     onClick={(e) => {this.route("RecipeList")}}>View Recipes</button></li>
+
 
 
                    </ul>
@@ -48,20 +49,20 @@ class App extends Component {
 
                 <Row>
                    <Col className="aside" sm={2}>
-                       <h3><button> My Recipes </button></h3>
+                       <h3>My Recipes</h3>
                        <hr/>
-                       <h3><button > Public Recipes </button></h3>
+                       <h3>Public Recipes</h3>
                        <hr/>
-                       <h3><button> Popular Recipes </button></h3>
+                       <h3>Popular Recipes</h3>
                        <hr/>
-                       <h3><button> My Favorite Recipes</button></h3>
+                       <h3>My Favorite Recipes</h3>
                        <hr/>
-                       <h3><button> Vegetarian Recipes </button></h3>
+                       <h3>Vegetarian Recipes</h3>
                        <hr/>
                    </Col>
 
                     <Col lg={8}>
-                       <Container className="MainCont">
+                       <Container-fluid className="MainCont">
                             {(() => {
                            switch(this.state.currentScreen) {
                              case 'RecipeList':
@@ -75,7 +76,7 @@ class App extends Component {
                        })()}
 
 
-                     </Container>
+                     </Container-fluid>
                     </Col>
                     </Row>
             </div>
